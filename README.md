@@ -43,7 +43,7 @@ Let's look at the minimalistic train-loop for PyTorch:
 
 We do a lot of nested iterations, going through different learning stages (warmup, train, finetune, etc.), iterate by epochs, iterate by all our dataloaders (train, valid, etc.) and finally, process batches inside each dataloader in some way.
 
-This works, but it is not extensible at all. To be able to add the necessary logic over the standard train-loop, we have introduced the Callbacks.
+This works, but how to make it customizable? To be able to add the necessary logic over the standard train-loop, we have introduced the Callbacks.
 
 ---
 Any [callback](https://github.com/catalyst-team/catalyst/blob/b1d71998e8dad7604a3eb3ff0279fb275b8ae7e2/catalyst/dl/core/callback.py#L24) is the inherited of the `catalyst.dl.core.Callback` class with one or more methods implemented:
